@@ -1,0 +1,80 @@
+#
+# Copyright (C) 2013 The Android Open Source Project
+# Copyright (C) 2013 Óliver García Albertos (oliverarafo@gmail.com)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+------------------------------------------------------------------
+
+* Description
+
+  This repository is for CM10.1 on Samsung Galaxy SIII Mini a.k.a Samsung Golden.
+  It's still a work in progress.
+
+* How To Build CM10.1 for Samsung Golden
+
+  - Make a workspace
+
+  $ mkdir -p ~/cyanogenmod/system
+  $ cd ~/cyanogenmod/system
+
+
+  - Do repo init & sync
+
+  $ repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1
+
+
+  - Create .repo/local_manifests/roomservice.xml with the following content:
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <manifest>
+      <project name="OliverG96/android_device_samsung_golden" path="device/samsung/golden" />
+      <project name="OliverG96/android_device_samsung_golden-common" path="device/samsung/golden-common" />
+      <project name="OliverG96/android_device_samsung_u8500-common" path="device/samsung/u8500-common" />
+      <project name="OliverG96/android_kernel_samsung_golden" path="kernel/samsung/golden" />
+      <project name="OliverG96/android_vendor_samsung_golden" path="vendor/samsung/golden" />
+      <project name="TeamCanjica/android_hardware_u8500" path="hardware/u8500" />
+  </manifest>
+
+  $ repo sync
+
+
+  - Setup vendor
+
+  $ ./vendor/cm/get-prebuilts
+
+
+  - Setup environment
+
+  $ source build/envsetup.sh
+  $ lunch cm_golden-eng
+
+
+  - Build CM10.1
+
+  $ export USE_CCACHE=1
+  $ make -j4 bacon
+
+
+* Thanks
+
+  CyanogenMod
+  alquez
+  modpunk
+  dudeman1996
+  benjamingwwyn
+  lupohirp
+  marcin
+  diego-ch
+  maclaw
