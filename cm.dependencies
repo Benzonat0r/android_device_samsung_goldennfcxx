@@ -16,12 +16,12 @@
     "target_path": "kernel/samsung/goldennfc"
   },
   {
-   "repository": "android_vendor_samsung_golden",
-   "target_path": "vendor/samsung/golden"
+    "repository": "android_vendor_samsung_golden",
+    "target_path": "vendor/samsung/golden"
   },
   {
-   "repository": "android_hardware_u8500",
-   "target_path": "hardware/u8500"
+    "repository": "android_hardware_u8500",
+    "target_path": "hardware/u8500"
   },
   {
     "repository": "android_packages_apps_Nfc",
