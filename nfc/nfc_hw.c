@@ -19,7 +19,7 @@
 #include <hardware/hardware.h>
 #include <hardware/nfc.h>
 
-static uint8_t pn544_eedata_settings[][4] = {
+static uint8_t pn547_eedata_settings[][4] = {
     // DIFFERENTIAL_ANTENNA
 
     // RF Settings
@@ -87,7 +87,7 @@ static uint8_t pn544_eedata_settings[][4] = {
     ,{0x00,0x9F,0x09,0x00} // 0x00 - Disable EMD support, 0x01 - Enable EMD support
 };
 
-static int pn544_close(hw_device_t *dev) {
+static int pn547_close(hw_device_t *dev) {
     free(dev);
 
     return 0;
@@ -99,19 +99,19 @@ static int pn544_close(hw_device_t *dev) {
 
 static int nfc_open(const hw_module_t* module, const char* name,
         hw_device_t** device) {
-    if (strcmp(name, NFC_PN544_CONTROLLER) == 0) {
-        nfc_pn544_device_t *dev = calloc(1, sizeof(nfc_pn544_device_t));
+    if (strcmp(name, NFC_PN547_CONTROLLER) == 0) {
+        nfc_pn547_device_t *dev = calloc(1, sizeof(nfc_pn547_device_t));
 
         dev->common.tag = HARDWARE_DEVICE_TAG;
         dev->common.version = 0;
         dev->common.module = (struct hw_module_t*) module;
-        dev->common.close = pn544_close;
+        dev->common.close = pn547_close;
 
-        dev->num_eeprom_settings = sizeof(pn544_eedata_settings) / 4;
-        dev->eeprom_settings = (uint8_t*)pn544_eedata_settings;
+        dev->num_eeprom_settings = sizeof(pn547_eedata_settings) / 4;
+        dev->eeprom_settings = (uint8_t*)pn547_eedata_settings;
 //        -------------------------------------------------------------
 //          to set
-//        dev->linktype = PN544_LINK_TYPE_UART;
+//        dev->linktype = PN547_LINK_TYPE_UART;
 //        dev->device_node = "/dev/ttyO3";
 //        -------------------------------------------------------------
         dev->enable_i2c_workaround = 0;
@@ -132,7 +132,7 @@ struct nfc_module_t HAL_MODULE_INFO_SYM = {
         .version_major = 1,
         .version_minor = 0,
         .id = NFC_HARDWARE_MODULE_ID,
-        .name = "Janicep NFC HW HAL",
+        .name = "goldennfcxx NFC HW HAL",
         .author = "The Android Open Source Project",
         .methods = &nfc_module_methods,
     },
