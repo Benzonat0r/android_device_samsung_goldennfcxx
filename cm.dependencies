@@ -1,7 +1,7 @@
 [
   {
     "repository": "android_device_samsung_golden",
-    "target_path": "device/samsung/golden"
+    "target_path": "device/samsung/goldennfc"
   },
   {
     "repository": "android_device_samsung_golden-common",
@@ -13,7 +13,7 @@
   },
   {
     "repository": "android_kernel_samsung_golden",
-    "target_path": "kernel/samsung/golden"
+    "target_path": "kernel/samsung/goldennfc"
  },
  {
    "repository": "android_vendor_samsung_golden",
