@@ -20,15 +20,15 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/goldennfcxx/device_goldennfcxx.mk)
+$(call inherit-product, device/samsung/goldennfc/device_goldennfcxx.mk)
 
 # Device identifier
-PRODUCT_DEVICE := goldennfcxx
-PRODUCT_NAME := cm_goldennfcxx
+PRODUCT_DEVICE := goldennfc
+PRODUCT_NAME := cm_goldennfc
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-I8190N
 PRODUCT_MANUFACTURER := samsung
 
 # Set build fingerprint and ID
 BUILD_ID := TRIANA00$(shell date -u +%Y%m%d)
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=cm_goldennfcxx BUILD_FINGERPRINT=cyanogenmod/cm_goldennfcxx/golden:4.2.2/$(BUILD_ID) PRIVATE_BUILD_DESC="GT-I8190N 4.2.2"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=cm_golden BUILD_FINGERPRINT=cyanogenmod/cm_golden/golden:4.2.2/$(BUILD_ID) PRIVATE_BUILD_DESC="GT-I8190N 4.2.2"
