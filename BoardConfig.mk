@@ -31,3 +31,5 @@ TARGET_KERNEL_CONFIG := cm_goldennfc_defconfig
 # NFC
 BOARD_HAS_NFC := true
 
+# NFC
+BOARD_NFC_HAL_SUFFIX := pn547
