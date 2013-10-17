@@ -32,4 +32,4 @@ TARGET_KERNEL_CONFIG := cm_goldennfc_defconfig
 BOARD_HAS_NFC := true
 
 # NFC
-BOARD_NFC_HAL_SUFFIX := pn547
+BOARD_NFC_HAL_SUFFIX := montblanc
