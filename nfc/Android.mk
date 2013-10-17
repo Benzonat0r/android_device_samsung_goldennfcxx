@@ -16,7 +16,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := nfc.u8500
+LOCAL_MODULE := nfc.montblanc
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_SRC_FILES := nfc_hw.c
 LOCAL_SHARED_LIBRARIES := liblog libcutils
